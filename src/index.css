@@ -35,7 +35,6 @@ body {
   width: 100%;
   z-index: 1000;
   background-color: #fff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
 
 .navbar-logo {
@@ -128,6 +127,7 @@ body {
   width: 100%;
   height: auto;
   overflow: visible;
+  margin-top: 20px;
 }
 
 .banner {
@@ -384,6 +384,55 @@ body {
 
 .btn-leer-mas:hover {
   background-color: #1D4E77;
+}
+
+
+@media (max-width: 1024px) {
+  .quienes-somos {
+    padding: 90px 24px;
+  }
+
+  .quienes-somos-circulo {
+    width: 620px;
+    height: 620px;
+  }
+
+  .quienes-somos-content {
+    max-width: 480px; 
+  }
+
+  .quienes-somos h1 {
+    font-size: 2.8rem; 
+  }
+
+  .quienes-somos-content p {
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .quienes-somos {
+    padding: 70px 20px;
+  }
+
+  .quienes-somos-circulo {
+    width: 95vw;
+    height: 95vw;
+    max-width: 480px;
+  }
+
+  .quienes-somos-content {
+    max-width: 340px; 
+  }
+
+  .quienes-somos h1 {
+    font-size: 2.4rem;
+  }
+
+  .quienes-somos-content p {
+    font-size: 0.85rem;
+  }
 }
 
 /* SEGUROS */
@@ -1032,7 +1081,7 @@ body {
   min-height: 430px;
   display: flex;
   align-items: center;
-  padding: 90px 24px;
+  padding: calc(var(--nav-height, 90px) + 40px) 24px 90px;
 }
 
 .info-hero-content {
@@ -1404,7 +1453,7 @@ body {
 @media (max-width: 700px) {
   .info-hero {
     min-height: 360px;
-    padding: 70px 24px;
+    padding: calc(var(--nav-height, 90px) + 24px) 24px 70px;
   }
 
   .info-titulo {
