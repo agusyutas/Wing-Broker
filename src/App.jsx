@@ -11,7 +11,9 @@ import Preguntas from './components/Preguntas.jsx'
 import TestimoniosPreguntas from './components/TestimoniosPreguntas.jsx'
 import Contacto from './components/Contacto.jsx'
 import Info from './pages/Infoo.jsx'
+import WspBoton from './components/WspBoton.jsx'
 import Footer from './components/Footer.jsx'
+
 
 
 function Landing() {
@@ -41,6 +43,7 @@ function App() {
           <Route path="/" element={<Landing />} />
           <Route path="/historia" element={<Info />} />
         </Routes>
+        <WspBoton/>
       </main>
 
       <footer>

@@ -1,3 +1,8 @@
+import { BsInstagram } from "react-icons/bs";
+import { BsLinkedin } from "react-icons/bs";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { BsFillTelephoneFill } from "react-icons/bs";
+
 const navegacion = [
   { texto: "Inicio", href: "/#top" },
   { texto: "Quiénes somos", href: "/#quienes-somos" },
@@ -52,16 +57,20 @@ function Footer() {
           <div className="col-12 col-md-4">
             <h4>Contacto</h4>
             <div className="footer-contacto-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                <path d="M4 6l8 6 8-6M4 6h16v12H4z" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <a href="mailto:wingbroker@gmail.com">wingbroker@gmail.com</a>
+              <MdOutlineMailOutline />
+              <a href="mail:fernandoyutas@wing-broker.com.ar">fernandoyutas@wing-broker.com.ar</a>
             </div>
             <div className="footer-contacto-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                <path d="M6.6 10.8a15.5 15.5 0 006.6 6.6l2.2-2.2a1 1 0 011-.2 11 11 0 003.5.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.4a1 1 0 011 1 11 11 0 00.6 3.5 1 1 0 01-.2 1z" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              <a href="tel:1121213131">11-2121-3131</a>
+              <BsFillTelephoneFill />
+              <a href="tel:1155795545">11-5579-5545</a>
+            </div>
+            <div className="footer-redes">
+                <a href="https://www.instagram.com/wing_broker/" target="_blank" rel="noopener noreferrer" className="footer-red-link">
+                  <BsInstagram />
+                </a>
+                <a href="https://www.linkedin.com/in/wing-broker-586b54438/" target="_blank" rel="noopener noreferrer" className="footer-red-link">
+                  <BsLinkedin />
+                </a>
             </div>
           </div>
         </div>
