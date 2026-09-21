@@ -10,7 +10,7 @@ const preguntas = [
     respuesta: "La documentación necesaria depende del tipo de seguro, el bien o riesgo a asegurar y las características de cada cliente. En general, pueden solicitarse datos personales y de contacto, documentación que identifique al asegurado y, según el caso, información específica sobre el vehículo, inmueble, comercio, empresa o actividad que se desea proteger.",
   },
   {
-    pregunta: "¿Por qué contratar mi seguro con Wing Broker?",
+    pregunta: "¿Por qué contratar un seguro con Wing Broker?",
     respuesta: "Porque creemos que contratar un seguro no debería ser simplemente elegir una póliza. Primero entendemos qué necesitás proteger y después buscamos la cobertura adecuada. En Wing Broker brindamos asesoramiento personalizado y trabajamos con distintas alternativas del mercado para encontrar soluciones acordes a las necesidades de cada cliente. Nuestro objetivo es que conozcas qué estás contratando, qué incluye tu cobertura y cuáles son sus condiciones. Además, nuestro acompañamiento no termina con la contratación: estamos para asesorarte cuando necesitás realizar una consulta, modificar tu cobertura o atravesar un siniestro."
   },
 ]

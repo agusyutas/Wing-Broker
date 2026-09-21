@@ -1,18 +1,18 @@
 const testimonios = [
   {
-    imagen: {src:"/gustavo.jpg", alt: 'gustavo'},
+    imagen: {src:"/gustavo.jpg", alt: 'Gustavo Manini'},
     nombre: "Gustavo Manini",
     seguro: "Seguro de auto",
     texto: "Me asesoraron muy bien desde el primer momento y encontré una cobertura que se ajustaba a lo que necesitaba. La atención y el acompañamiento fueron excelentes.",
   },
   {
-    imagen: {src:"/noelia.jpg", alt: 'noelia'},
+    imagen: {src:"/noelia.jpg", alt: 'Noelia Rusillio'},
     nombre: "Noelia Rusillio",
     seguro: "Seguro del viajero",
     texto: "Viajé mucho más tranquila sabiendo que tenía una cobertura completa. Me asesoraron desde el primer momento y resolvieron todas mis dudas antes de viajar.",
   },
   {
-    imagen: {src:"/brisa.jpg", alt: 'brisa'},
+    imagen: {src:"/brisa.jpg", alt: 'Brisa Masini'},
     nombre: "Brisa Masini",
     seguro: "Seguro de hogar",
     texto: "Cuando tuve un problema en casa, se encargaron de acompañarme durante todo el proceso. Tener a alguien que me asesorara y gestionara el trámite hizo toda la diferencia.",
@@ -30,13 +30,9 @@ function Testimonios() {
             <div className="col-12 col-md-4" key={index}>
               <div className="testimonio-card">
                 <div className="testimonio-header">
-                  <img
-                    className="testimonio-avatar"
-                    src={item.imagen.src}
-                    alt={item.imagen.alt}
-                  />
+                  <img className="testimonio-avatar" src={item.imagen.src} alt={item.imagen.alt}/>
                   <div>
-                    <p className="testimonio-nombre">{item.nombre}</p>
+                    <h3 className="testimonio-nombre">{item.nombre}</h3>
                     <p className="testimonio-seguro">{item.seguro}</p>
                   </div>
                 </div>

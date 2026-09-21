@@ -1,31 +1,31 @@
 const seguros = [
   {
-    icono: { src: '/coche-wing.png', alt: 'icono coche' },
+    icono: { src: '/coche-wing.png', alt: '' },
     titulo: "Seguro Automotor",
     descripcion: "Coberturas contra terceros, robo o todo riesgo, con asistencia mecánica incluida.",
   },
   {
-    icono: { src: '/hogar-wing.png', alt: 'icono hogar' },
+    icono: { src: '/hogar-wing.png', alt: '' },
     titulo: "Seguro de hogar",
     descripcion: "Protección contra incendio, robo, daños por agua y responsabilidad civil.",
   },
   {
-    icono: { src: '/corazon-wing.png', alt: 'icono corazon' },
+    icono: { src: '/corazon-wing.png', alt: '' },
     titulo: "Seguro de vida",
     descripcion: "Tranquilidad económica para tu familia ante un imprevisto.",
   },
   {
-    icono: { src: '/proteger-wing.png', alt: 'icono escudo' },
+    icono: { src: '/proteger-wing.png', alt: '' },
     titulo: "Caución y garantías",
     descripcion: "Pólizas de caución para alquileres, licitaciones y contratos.",
   },
   {
-    icono: { src: '/avion-wing.png', alt: 'icono avion' },
+    icono: { src: '/avion-wing.png', alt: '' },
     titulo: "Seguro del viajero",
     descripcion: "Cobertura para vos y tu familia durante tus viajes, en Argentina o el exterior.",
   },
   {
-    icono: { src: '/tienda-wing.png', alt: 'icono tienda' },
+    icono: { src: '/tienda-wing.png', alt: '' },
     titulo: "Seguro comercial / Pyme",
     descripcion: "Cobertura para tu local, mercadería, maquinaria y responsabilidad civil.",
   },

@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom'
 function QuienesSomos() {
   return (
     <section id="quienes-somos" className="quienes-somos">
-
       <div className="quienes-somos-circulo"></div>
-
       <div className="quienes-somos-content">
         <h1>Wing Broker SRL</h1>
         <p>

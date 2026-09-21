@@ -1,12 +1,8 @@
 import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 
-// Solo letras (con acentos y ñ) y espacios
 const soloLetras = (valor) => valor.replace(/[^a-zA-ZÁÉÍÓÚáéíóúÑñ\s]/g, '')
-
-// Solo números, espacios, +, ( ) y guiones (formatos comunes de teléfono)
 const soloTelefono = (valor) => valor.replace(/[^0-9+\s()-]/g, '')
-
 const emailValido = (valor) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor)
 
 function Contacto() {
@@ -25,7 +21,6 @@ function Contacto() {
     const { name, value } = e.target
     let valorLimpio = value
 
-    // Filtramos caracteres inválidos en tiempo real según el campo
     if (name === 'nombre' || name === 'apellido') {
       valorLimpio = soloLetras(value)
     }
@@ -35,7 +30,6 @@ function Contacto() {
 
     setForm({ ...form, [name]: valorLimpio })
 
-    // Si el usuario corrige el campo, le sacamos el error en vivo
     if (errores[name]) {
       setErrores({ ...errores, [name]: null })
     }
@@ -122,11 +116,13 @@ function Contacto() {
             <div className="col-12 col-md-6">
               <label>Nombre</label>
               <input
+                id='nombre'
                 type="text"
                 name="nombre"
                 value={form.nombre}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 className={errores.nombre ? 'input-error' : ''}
               />
               {errores.nombre && <span className="mensaje-error">{errores.nombre}</span>}
@@ -135,11 +131,13 @@ function Contacto() {
             <div className="col-12 col-md-6">
               <label>Apellido</label>
               <input
+                id='apellido'
                 type="text"
                 name="apellido"
                 value={form.apellido}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 className={errores.apellido ? 'input-error' : ''}
               />
               {errores.apellido && <span className="mensaje-error">{errores.apellido}</span>}
@@ -148,11 +146,13 @@ function Contacto() {
             <div className="col-12 col-md-6">
               <label>Email</label>
               <input
+                id='email'
                 type="email"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 className={errores.email ? 'input-error' : ''}
               />
               {errores.email && <span className="mensaje-error">{errores.email}</span>}
@@ -161,24 +161,28 @@ function Contacto() {
             <div className="col-12 col-md-6">
               <label>Teléfono</label>
               <input
+                id='telefono'
                 type="tel"
                 name="telefono"
                 value={form.telefono}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 inputMode="tel"
+                required
                 className={errores.telefono ? 'input-error' : ''}
               />
               {errores.telefono && <span className="mensaje-error">{errores.telefono}</span>}
             </div>
 
             <div className="col-12">
-              <label>Mensaje:</label>
+              <label>Mensaje</label>
               <textarea
+                id='mensaje'
                 name="mensaje"
                 value={form.mensaje}
                 onChange={handleChange}
                 onBlur={handleBlur}
+                required
                 className={errores.mensaje ? 'input-error' : ''}
               />
               {errores.mensaje && <span className="mensaje-error">{errores.mensaje}</span>}
