@@ -291,6 +291,7 @@ body {
   display: flex;
   width: max-content;
   animation: moverLogos 25s linear infinite;
+  will-change: transform;
 }
 
 .logos-group {
@@ -320,6 +321,18 @@ body {
   }
 }
 
+@media (max-width: 700px) {
+  .logos-group {
+    gap: 60px;
+    padding-right: 60px;
+  }
+
+  .logos-group img {
+    height: 70px;
+    max-width: 140px;
+  }
+}
+
 /* QUIENES SOMOS */
 .quienes-somos {
   position: relative;
@@ -329,24 +342,12 @@ body {
   text-align: center;
 }
 
-.quienes-somos-circulo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 780px;
-  height: 780px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  z-index: 0;
-}
-
 .quienes-somos h1 {
   font-family: var(--font-titulos);
   font-weight: 600;
   font-style: normal;
   font-size: 4rem;  
-  color: #0F2A44;
+  color: #ffffff;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
 }
@@ -363,38 +364,58 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 0.90rem;
-  color: #5C6B78;
+  color: #D7E1EA;
   line-height: 1.2rem;
   margin-bottom: 30px;
 }
 
 .btn-leer-mas {
-  background-color: #0F2A44;
-  color: #fff;
+  background-color: #ffffff;
+  color: #0F2A44;
   border: none;
   text-decoration: none;
   border-radius: 30px;
   padding: 12px 40px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   font-family: var(--font-montserrat);
   font-weight: 600;
   font-style: normal;
+  display: inline-block;
 }
 
 .btn-leer-mas:hover {
-  background-color: #1D4E77;
+  background-color: #B8863B;
+  color: #ffffff;
 }
 
+.quienes-somos::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  width: 90px;
+  height: 90px;
+  border-top: 2px solid #B8863B;
+  border-left: 2px solid #B8863B;
+  z-index: 0;
+}
+
+.quienes-somos::after {
+  content: "";
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  width: 90px;
+  height: 90px;
+  border-bottom: 2px solid #B8863B;
+  border-right: 2px solid #B8863B;
+  z-index: 0;
+}
 
 @media (max-width: 1024px) {
   .quienes-somos {
     padding: 90px 24px;
-  }
-
-  .quienes-somos-circulo {
-    width: 620px;
-    height: 620px;
   }
 
   .quienes-somos-content {
@@ -409,17 +430,21 @@ body {
     font-size: 0.85rem;
     line-height: 1.4rem;
   }
+
+  .quienes-somos::before {
+    top: 32px;
+    left: 32px;
+  }
+
+  .quienes-somos::after {
+    bottom: 32px;
+    right: 32px;
+  }
 }
 
 @media (max-width: 700px) {
   .quienes-somos {
     padding: 70px 20px;
-  }
-
-  .quienes-somos-circulo {
-    width: 95vw;
-    height: 95vw;
-    max-width: 480px;
   }
 
   .quienes-somos-content {
@@ -431,7 +456,24 @@ body {
   }
 
   .quienes-somos-content p {
+    color: #D7E1EA;
     font-size: 0.85rem;
+  }
+
+  .quienes-somos::before,
+  .quienes-somos::after {
+    width: 60px;
+    height: 60px;
+  }
+
+  .quienes-somos::before {
+    top: 28px;
+    left: 24px;
+  }
+
+  .quienes-somos::after {
+    bottom: 28px;
+    right: 24px;
   }
 }
 
@@ -574,8 +616,8 @@ body {
 }
 
 .testimonio-avatar {
-  width: 44px;
-  height: 44px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   font-weight: 700;
   font-size: 0.85rem;

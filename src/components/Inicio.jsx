@@ -30,6 +30,10 @@ function Inicio() {
                 key={`logo-1-${index}`}
                 src={logo.src}
                 alt={logo.alt}
+                width="1000"
+                height="67"
+                loading="eager"
+                decoding="async"
               />
             ))}
           </div>
@@ -40,6 +44,10 @@ function Inicio() {
                 key={`logo-2-${index}`}
                 src={logo.src}
                 alt={logo.alt}
+                width="1000"
+                height="67"
+                loading="eager"
+                decoding="async"
               />
             ))}
           </div>
