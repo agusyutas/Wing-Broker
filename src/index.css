@@ -1349,7 +1349,7 @@ body {
 
 .info-fila-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 45px;
   max-width: none;
   padding: 0;

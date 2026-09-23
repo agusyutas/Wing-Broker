@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 const equipo = [
   {
-    foto: { src: "/jorge-klein.jpeg", alt: 'Jorge Klein' },
+    foto: { src: "/jorge.jpeg", alt: 'Jorge Klein' },
     nombre: 'Jorge Juan Klein',
     cargo: 'Co-fundador · Productor Asesor de Seguros',
     descripcion:
@@ -18,7 +18,7 @@ const equipo = [
     destacado: true,
   },
   {
-    foto: { src: "/fernanda-klein.jpg", alt: 'Fernanda Klein' },
+    foto: { src: "/fernanda.jpeg", alt: 'Fernanda Klein' },
     nombre: 'Fernanda Mirta Klein',
     cargo: 'Socia Gerente · Fundadora',
     descripcion:
