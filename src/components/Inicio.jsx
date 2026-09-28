@@ -1,3 +1,16 @@
+import { useState, useEffect } from 'react'
+
+const WHATSAPP_URL =
+  'https://wa.me/5491155795545?text=' +
+  encodeURIComponent(
+    'Hola! quiero sumarme al equipo de Wing Broker como productor de seguros.'
+  )
+
+const slides = [
+  { src: '/banner.png', alt: 'Equipo de Wing Broker', cta: false },
+  { src: '/banner-2.png', alt: 'Sumate al equipo de Wing Broker', cta: true },
+]
+
 function Inicio() {
     const logos = [
     { src: '/allianz-logo.png', alt: 'Allianz' },
@@ -10,15 +23,78 @@ function Inicio() {
     { src: '/mapre-logo.png', alt: 'Mapfre' },
   ]
 
+  const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
+
+  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length)
+  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
+  
+  useEffect(() => {
+    if (paused) return
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [paused])
+
   return (
     <section id="inicio" className="inicio">
 
-      <div className="inicio-content">
-        <img
-          src="/banner.png"
-          alt="Equipo de Wing Broker"
-          className="banner"
-        />
+      <div className="inicio-content" 
+        onMouseEnter={() => setPaused(true)} 
+        onMouseLeave={() => setPaused(false)}
+      >
+      <div className="carousel">
+          <div
+            className="carousel-track"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {slides.map((slide, index) => (
+              <div className="carousel-slide" key={slide.src}>
+                <img src={slide.src} alt={slide.alt} className="banner" />
+                  {slide.cta && (
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="banner-cta" tabIndex={current === index ? 0 : -1}>
+                    Sumate a nuestro equipo
+                  </a>
+                )}
+              </div>
+            ))}
+            
+          </div>
+            <button
+            type="button"
+            className="carousel-arrow carousel-arrow-prev"
+            onClick={goPrev}
+            aria-label="Banner anterior"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6" />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            className="carousel-arrow carousel-arrow-next"
+            onClick={goNext}
+            aria-label="Banner siguiente"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
+
+           <div className="carousel-dots">
+            {slides.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={`carousel-dot ${current === index ? 'active' : ''}`}
+                onClick={() => setCurrent(index)}
+                aria-label={`Ir al banner ${index + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
        <div className="logos-carousel">

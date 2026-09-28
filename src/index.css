@@ -122,19 +122,111 @@ body {
   width: 100%;
   padding-top: 110px;
 }
-/* BANNER DE BIENVENIDA */
+
 .inicio-content {
-  width: 100%;
-  height: auto;
-  overflow: visible;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
-.banner {
+/* CARRUSEL DE BANNERS */
+.carousel {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
+  overflow: hidden; 
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.carousel-slide {
+  position: relative; 
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #0f1f4d;
+  box-shadow: 0 4px 12px rgba(15, 31, 77, 0.2);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-arrow svg {
+  width: 22px;
+  height: 22px;
+}
+
+.carousel-arrow:hover {
+  background-color: #fff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-arrow-prev {
+  left: 12px;
+}
+
+.carousel-arrow-next {
+  right: 12px;
+}
+.banner-cta {
+  position: absolute;
+  left: 4.7%;     
+  bottom: 18%;     
+  display: inline-block;
+  padding: 0.8em 1.8em;
+  background-color: #0f1f4d;
+  color: #fff;
+  font-family: var(--font-montserrat);
+  font-weight: 600;
+  font-size: clamp(0.6rem, 1.7vw, 1.15rem); 
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(15, 31, 77, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.banner-cta:hover {
+  background-color: #3a5bbf;
+  transform: translateY(-2px);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(15, 31, 77, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-dot.active {
+  background-color: #0f1f4d;
+  transform: scale(1.25);
 }
 
 @media (max-width: 1024px) {
@@ -235,10 +327,45 @@ body {
     display: block;
     object-fit: contain;
   }
+
+  .banner-cta {
+    bottom: 14%;
+    padding: 0.7em 1.3em;
+    font-size: 0.62rem;
+    box-shadow: 0 3px 8px rgba(15, 31, 77, 0.25);
+  }
+
+  .carousel-arrow {
+    top: auto;
+    bottom: 2px;
+    transform: none;
+    width: 28px;
+    height: 28px;
+  }
+
+  .carousel-arrow:hover {
+    transform: scale(1.08);
+  }
+
+  .carousel-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .carousel-arrow-prev {
+    left: calc(50% - 50px);
+  }
+
+  .carousel-arrow-next {
+    right: calc(50% - 50px);
+  }
+
+  .carousel-dots {
+    bottom: 11px;
+  }
 }
 
 @media (max-width: 400px) {
-
   .navbar {
     padding: 12px 16px;
   }
@@ -261,6 +388,12 @@ body {
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  .banner-cta {
+    bottom: 13%;
+    padding: 0.65em 1.2em;
+    font-size: 0.55rem;
   }
 }
 
