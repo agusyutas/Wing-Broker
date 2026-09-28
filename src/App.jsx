@@ -14,8 +14,6 @@ import Info from './pages/Infoo.jsx'
 import WspBoton from './components/WspBoton.jsx'
 import Footer from './components/Footer.jsx'
 
-
-
 function Landing() {
   return (
     <>
