@@ -24,26 +24,21 @@ function Inicio() {
   ]
 
   const [current, setCurrent] = useState(0)
-  const [paused, setPaused] = useState(false)
 
   const goNext = () => setCurrent((prev) => (prev + 1) % slides.length)
   const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length)
   
-  useEffect(() => {
-    if (paused) return
+   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [paused])
+  }, [])
 
   return (
     <section id="inicio" className="inicio">
 
-      <div className="inicio-content" 
-        onMouseEnter={() => setPaused(true)} 
-        onMouseLeave={() => setPaused(false)}
-      >
+      <div className="inicio-content">
       <div className="carousel">
           <div
             className="carousel-track"
@@ -59,7 +54,7 @@ function Inicio() {
                 )}
               </div>
             ))}
-            
+
           </div>
             <button
             type="button"
